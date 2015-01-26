@@ -1,0 +1,345 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = de_DE
+\pdfminorversion=4
+
+%\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
+
+\documentclass[german]{beamer} % evtl. FabLab Anpassungen
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{color}
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
+\usepackage{hyperref}
+\usepackage{scrhack}
+\usepackage{multicol}
+
+\newcommand{\images}{vektorzeichnen/}
+\newcommand{\ccbysa}{\includegraphics[height=0.11in]{cc-by-sa.png}}
+
+\beamertemplatenavigationsymbolsempty
+
+\addtobeamertemplate{footline}{
+    \usebeamerfont{footline}
+    \usebeamercolor[fg]{footline}
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+    \hspace{1em}%
+    \insertsectionhead
+}{}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\title{Vektorzeichnen mit Inkscape}
+\author{Sebastian Endres}
+\logo{\includegraphics[width=0.3\linewidth]{logo/logo.pdf}}
+
+\begin{document}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\maketitle
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\frame{\tableofcontents}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Grundlagen Vektorgrafik}
+\subsection{Vergleich Pixelgrafik - Vektorgrafik}
+\begin{frame}[t]
+  \frametitle{Was ist eine Vektorzeichnung?}
+  
+  \begin{columns}[t]
+  	\begin{column}{0.5\textwidth}
+  		\textbf{Pixelgrafik}
+  		\begin{itemize}
+  			\item Besteht aus einzelnen Pixeln (Farbpunkte)
+  			\item verpixelt beim Vergrößern
+  			\item Bsp.: \texttt{.png, .jp(e)g, .bmp, .ico, .gif}
+  		\end{itemize}
+  		\begin{figure}
+  		   \centering
+  			\includegraphics[width=0.7\textwidth]{\images/marvin_bitter.png}
+  			\caption{verpixelter Marvin}
+  			\label{fig:marvin_bitter}
+  		\end{figure}
+  	\end{column}
+  	
+  	\begin{column}{0.5\textwidth}
+  	\textbf{Vektorgrafik}
+  		\begin{itemize}
+  			\item Besteht aus geometrischen Objekten \\(Linien, Flächen, etc.)
+  			\item Objekte bestehen aus Pfaden
+  			\item Bsp.: \texttt{.svg}
+  		\end{itemize}
+  		\begin{figure}
+  			\centering
+  			\includegraphics[width=0.6\textwidth]{\images/marvin.pdf}
+  			\caption{vektorisierter Marvin}
+  			\label{fig:marvin_vektor}
+  		\end{figure}
+  	\end{column}
+  \end{columns}
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsection{Einsatzgebiete für Vektorgrafiken?}
+\begin{frame}
+  \frametitle{Warum Vektorgrafik?}
+  
+  \begin{itemize}
+	  \item Aus Vektorpfaden kann der Weg für Maschinen (Lasercutter / Schneideplotter) berechnet werden
+	  		\begin{minipage}{\linewidth}
+	  		  \begin{figure}
+	  		  	\centering
+	  		    \includegraphics[width=0.3\textwidth]{\images/path.pdf}
+	  		    \caption{Pfad}
+	  		    \label{fig:path}
+	  		  \end{figure}
+	  		\end{minipage}
+	  \item Vektorgrafiken sind beliebig skalierbar
+  \end{itemize}
+
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsection{Programme - Übersicht}
+\begin{frame}
+  \frametitle{Welche Programme gibt es?}
+  
+  \begin{itemize}
+  	\item Inkscape
+  	\item Adobe Illustrator (proprietär, kostenpflichtig)
+  	\item Corel Draw (proprietär, kostenpflichtig)
+  \end{itemize}
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Inkscape}
+\subsection{Grundlagen}
+\begin{frame}
+  \frametitle{Inkscape}
+  
+  \begin{itemize}
+  	\item Kostenlos
+  	\item open source
+  	\item Ideal für das Erstellen von SVG-Dateien
+  	\item Verfügbar für Linux, Windows, Mac
+  	\item \href{https://inkscape.org/download/}{Download Seite: \texttt{inkscape.org/download}}
+  \end{itemize}
+
+  \begin{figure}
+  	\centering
+    \includegraphics[width=0.3\textwidth]{\images/inkscape_logo_300x300.png}
+    \caption{Inkscape Logo}
+    \label{fig:inkscape_logo}
+  \end{figure}  
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Übersicht}
+\begin{frame}
+  \frametitle{Übersicht}
+
+  \begin{figure}
+  	\centering
+    \includegraphics[width=\textwidth]{\images/scr_shot/start.png}
+    %\caption{Start}
+    \label{fig:inkscape_scr_shot_start}
+  \end{figure}
+  
+ \end{frame}
+
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Objekte zeichnen}
+\begin{frame}
+  \frametitle{Objekt zeichnen}
+
+  \begin{figure}
+  	\centering
+    \includegraphics[width=\textwidth]{\images/scr_shot/draw_object.png}
+    %\caption{Object zeichnen}
+    \label{fig:inkscape_scr_shot_draw_object}
+  \end{figure}
+  
+ \end{frame}
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Farbe, Dicke setzen}
+\begin{frame}
+  \frametitle{Farbe, Dicke setzen}
+
+  \begin{figure}
+  	\centering
+    \includegraphics[width=0.7\textwidth]{\images/scr_shot/color.png}
+    \caption{Farbe setzen}
+    \label{fig:inkscape_scr_shot_color}
+  \end{figure}
+      
+  \textbf{Farb- und Linien Fenster:}
+  \begin{itemize}
+  	\item \texttt{Objekt $\rightarrow$ Füllung und Kontur}
+  	\item \texttt{Strg + Umschalt + F}
+	\item Doppelklick auf \colorbox{orange}{Farbbereich}
+  \end{itemize} 
+  
+ \end{frame}
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Pfad manuell bearbeiten}
+\begin{frame}[t]
+  \frametitle{Pfad manuell bearbeiten}
+  
+  \begin{columns}[t]
+  	\begin{column}{0.4\textwidth}
+  		\textbf{Mäuse}
+  		\begin{figure}
+  		   \centering
+  			\includegraphics[width=0.3\textwidth]{\images/scr_shot/mouses.png}
+  			\label{fig:inkscape_scr_shot_mouses}
+  		\end{figure}
+  		\begin{enumerate}
+  			\item Objekt Maus für das Bearbeiten von Objekten
+  			\item Pfad Maus für das Bearbeiten von Pfaden anhand ihrer Knoten
+  		\end{enumerate}
+  	\end{column}
+  	
+  	\begin{column}{0.6\textwidth}
+  	\textbf{Pfad bearbeiten}
+  		\begin{figure}
+  			\centering
+  			\includegraphics[width=0.9\textwidth]{\images/scr_shot/edit_path.png}
+  			\label{fig:inkscape_scr_shot_edit_path}
+  		\end{figure}
+  	\end{column}
+  \end{columns}
+  
+ \end{frame}
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Pfad Optionen}
+\begin{frame}[t]
+  \frametitle{Pfad Optionen}
+  
+  \begin{columns}[t]
+  	\begin{column}{0.3\textwidth}
+  		\begin{figure}
+  		   \centering
+  			\includegraphics[width=\textwidth]{\images/scr_shot/path_options.png}
+  			\label{fig:inkscape_scr_shot_path_options}
+  		\end{figure}
+  	\end{column}
+  	
+  	\begin{column}{0.7\textwidth}
+  		\begin{enumerate}
+  			\item Mehrere Pfad-Objekte können zu einem Objekt vereint werden
+  			\item Sie können einfach kombiniert werden (\texttt{Strg + K}), dann sind aber die einzelnen Linien nicht verbunden sondern nur \grqq zusammengehörig\grqq
+  			\item Sie können \textbf{verschnitten} werden (verschiedene \grqq Regeln\grqq)
+  		\end{enumerate}
+  		
+  		\vspace{1em}
+  		\alert{\textbf{Beachte:} Gruppieren verbindet Objekte, aber vereint sie nicht.}
+  		
+  	\end{column}
+  \end{columns}
+  
+ \end{frame}
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Bilder vektorisieren}
+\begin{frame}
+	\frametitle{Bilder Vektorisieren}
+  	\centering
+	\textbf{Pixelbilder können in Vektorbilder umgewandelt werden}
+  
+	\begin{figure}
+  		\centering
+    	\includegraphics[height=0.3\textwidth]{\images/scr_shot/trace_bitmap.png}
+    	\caption{Inkscape Screenshot - Bitmap vektorisieren}
+    	\label{fig:inkscape_scr_shot_trace_bitmap}
+  	\end{figure}
+  	
+  	\begin{itemize}
+  		\item \texttt{Pfad $\rightarrow$ Bitmap vektorisieren}
+  		\item \texttt{Alt + Shift + B}
+  	\end{itemize}
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\subsection{Beachte beim Zeichnen}
+\begin{frame}
+  \frametitle{Beachte beim Zeichnen}
+  
+  \begin{itemize}
+  	\item Dünne Linien verwenden, um genauer zeichnen zu können
+  	\item Objekte ausrichten und einrasten lassen
+  		\begin{itemize}
+  			\item Verwende die Einrastoptionen am rechten Rand
+  			\item Drücke \texttt{Strg} beim Verschieben, um die Richtungen zu sperren
+  			\item Richte die Objekte aus (\texttt{Objekt $\rightarrow$ Ausrichten und anordnen})
+  		\end{itemize}
+	\item Zusammengehörige Objekte verbinden / vereinen, nicht nur gruppieren
+  \end{itemize} 
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+%-----------------------------------------------------------------------------------------------------------------
+
+\section{Quellen}
+\begin{frame}
+  \frametitle{Quellen}
+  
+  \begin{itemize}
+  	\item \textbf{Inkscape Official Logo (Raster, 300x300px)}\\ von \textit{Inkscape User}: \href{https://inkscape.org/en/gallery/item/1088/}{\texttt{inkscape.org}} (Lizenz: \ccbysa) \par
+  	        \begin{minipage}{\linewidth}
+  	            \centering
+  	            \includegraphics[width=0.5in]{\images/inkscape_logo_300x300.png}
+  	        \end{minipage}
+  			
+  	\item \textbf{Marvin Bilder} von \textit{Dirty White Paint}, bearbeitet: \href{https://www.youtube.com/user/DirtyWhitePaint}{\texttt{youtube.com}} \par
+			\begin{minipage}{\linewidth}
+  	            \centering
+  	            \includegraphics[width=0.5in]{\images/marvin.pdf}
+  	        \end{minipage}
+  	\item \textbf{Eigene Bilder} (Lizenz: \ccbysa)
+  \end{itemize}
+  
+  \centering
+  Diese Präsentation ist verfügbar unter einer \ccbysa $\ $ Lizenz.
+  
+ \end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\end{document}
