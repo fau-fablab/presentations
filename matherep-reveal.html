@@ -20,66 +20,70 @@
  - Watch out for vertical slides (or use unly space key)
 -->
 
-    <link rel="shortcut icon" href="img/logo/fab_cube.png" />
+    <link type="image/png" rel="shortcut icon" href="img/logo/fab_cube.png" />
     <link rel="apple-touch-icon" href="img/logo/fab_cube.png" />
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <!--TODO: change the style-->
-		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
-
-    <!-- FabLab Style -->
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+    <!-- additional FabLab Style -->
     <link rel="stylesheet" href="style/fablab-reveal-theme.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-	<body>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-		<div class="reveal">
+  <body>
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+    <div class="reveal">
 
-				<section id="title">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section id="title">
           <q>Noch eine Gruppe?</q>
           <br />
           <img class="title_img" data-src="img/logo/logo.svg" alt="Hier könnte ihr Logo stehen">
-				</section>
+        </section>
 
-				<section id="about_fablabs">
+        <section id="about_fablabs">
           <q>FabLab?</q>
           <h2>Offene Werkstatt</h2>
           <ul>
             <li><b>Weltweit</b> über 400</li>
             <li>Ideen und Wissen miteinander teilen</li>
           </ul>
-				</section>
+          <blockquote cite="http://www.brainyquote.com/quotes/quotes/n/neilgershe634125.html">
+            &ldquo;If anyone can make anything, anywhere.<br/>
+            It fundamentally changes the meaning of business.&rdquo;
+          </blockquote>
+          <p><small>Prof. Neil Gershenfeld (MIT)</small></p>
+        </section>
 
         <section id="about_fau_fablab">
+          <q>FAU FabLab?</q>
+          <h2>Hightech-Wekstatt an der TechFak</h2>
           <ul>
-            <li>Offene <b>Hightech-Wekstatt</b> an der TechFak</li>
             <li>Von Studenten, <b>für jeden</b></li>
             <li><b>Selbständig</b> Ideen verwirklichen</li>
-            <li>lernen, wie's geht</li>
+            <li>Lernen, wie's geht</li>
             <li>Zum <b>Selbstkostenpreis</b></li>
           </ul>
         </section>
@@ -87,132 +91,135 @@
 <!-- Maschinen
 ==============
 Vertical slides -->
-				<section id="tools">
-          <q>Hightech?</q>
+                <section id="tools">
+          <q class="fixed_top">Hightech?</q>
 
-          <section id="tools:lazorkutter">
-            <h1>Lasercutter</h1>
-            <ul>
-              <li>Schneidet und graviert</li>
-              <li>Acryl, Holz, Aluminium, FAU Cards</li>
-            </ul>
-            <p>TODO: Bilder hier einfügen</p>
+          <section id="tools:lazorkutter" data-background="img/fablab_laser_holz.jpg" data-background-transition="slide">
+            <div class="dark_background">
+              <h1>Lasercutter</h1>
+              <ul>
+                <li>Schneidet und graviert</li>
+                <li>Acryl, Holz, Aluminium, FAU Cards</li>
+              </ul>
+            </div>
+            <img class="two_hor_img" data-src="img/mann_am_laser.jpg" alt="">
+            <img class="two_hor_img" data-src="img/laser_beam.jpg" alt="">
 
             <aside class="notes" data-markdown="">
               Vorsicht, es geht nach unten!
               =============================
 
               - Lasercutter
+                - 40 Watt
+                - Acryl, Holz, ...
+                - Witz: FAU Card
+                - Material ist da
+
               - Schneideplotter, T-Shirts
               - 3D Drucker
               - CNC (Fräse, Drehbank)
               - E-Werkstatt
-              - Anderes: TODO
+              - Anderes
             </aside>
           </section>
 
-          <section id="tools:3ddrucker">
-            <h1>3D Drucker</h1>
-            <p>Rapid Prototyping zum Zuschauen</p>
-            <p>TODO: Bilder / (Video?) hier einfügen</p>
+          <section id="tools:3ddrucker" data-background-video="img/Ultimaker_Timelapse-Dutch_Lion.webm" data-background-color="#000000">
+            <div class="dark_background">
+              <h1>3D Drucker</h1>
+              <p>Rapid Prototyping zum Zuschauen</p>
+            </div>
 
             <aside class="notes" data-markdown="">
-              Vorsicht, es geht nach unten!
-              =============================
-
-              - Schneideplotter, T-Shirts
               - 3D Drucker
-              - CNC (Fräse, Drehbank)
-              - E-Werkstatt
-              - Anderes: TODO
+                - 3 Stück
+
+              nach unten!
             </aside>
           </section>
 
           <section id="tools:schneideplotter">
             <h1>Schneideplotter, T-Shirts</h1>
-            <p>TODO: Bilder und Text hier einfügen</p>
+            <img class="two_hor_img" data-src="img/schneideplotter.jpg  " alt="Hier könnte der Schneideplotter zu sehen sein">
+            <img class="two_hor_img"  data-src="img/tshirt.jpg" alt="Hier könnte ein Bild von einem selber gemachten T-Shirt sein">
 
             <aside class="notes" data-markdown="">
-              Vorsicht, es geht nach unten!
-              =============================
-
               - 3D Drucker
-              - CNC (Fräse, Drehbank)
-              - E-Werkstatt
-              - Anderes: TODO
+
+              nach unten!
             </aside>
           </section>
 
-          <section id="tools:cnc">
-            <h1>CNC Fräse und Drehbank</h1>
-            <p>Zerpant Alu, Holz, Stahl</p>
-            <p>TODO: Bilder und Text hier einfügen</p>
+          <section id="tools:cnc" data-background="img/fraese_flaschenoeffner.jpg" data-background-transition="slide">
+            <div class="dark_background">
+              <h1>CNC Fräse und Drehbank</h1>
+              <p>Zerspant Alu, Holz, Stahl</p>
+            </div>
+            <img class="one_img" data-src="img/fraese.jpg" alt="Hier könnte ihre Fräse stehen">
 
             <aside class="notes" data-markdown="">
-              Vorsicht, es geht nach unten!
-              =============================
+              - CNC Fräse
+              - CNC Drehbank
 
-              - CNC (Fräse, Drehbank)
-              - E-Werkstatt
-              - Anderes: TODO
+              nach unten!
             </aside>
           </section>
 
-          <section id="tools:ewerkstatt">
-            <h1>E-Werkstatt</h1>
-            <p>Multimeter, Lötkolben, Oszis, ...</p>
-            <p>Widerstände, Kondensatoren, Transistoren, ...</p>
-            <p>Für E-Techniker und solche die es werden wollen</p>
-            <p>TODO alternativ: Im Gegensatz zu GET auch mal was praktisches oder so...</p>
-            <p>TODO: Bilder hier einfügen</p>
+          <section id="tools:ewerkstatt" data-background="img/belichten.jpg" data-background-transition="slide">
+            <div class="dark_background">
+              <h1>E-Werkstatt</h1>
+              <p>Platinen Ätzer, Multimeter, Lötkolben, Oszis, ...</p>
+              <p>Widerstände, Kondensatoren, Transistoren, ...</p>
+              <p>Für E-Techniker und solche die es werden wollen</p>
+            </div>
 
             <aside class="notes" data-markdown="">
-              Vorsicht, es geht nach unten!
-              =============================
+              - E-Werkstatt:
+                - Im Gegensatz zu GET auch mal was Praktisches
 
-              - E-Werkstatt
-              - Anderes: TODO
+              nach unten!
             </aside>
           </section>
 
           <section id="tools:andere_tools">
             <h1>...und jede Menge Anderes</h1>
-            <p>Druckluft</p>
-            <p>TODO: ewig lange liste?</p>
-            <p>TODO: Bilder und Text hier einfügen</p>
 
             <aside class="notes" data-markdown="">
+              - Druckluft
+              - Fahrrad
+              - normales Werkzeug
+
               Jetzt gehts wieder nach rechts!
               ===============================
             </aside>
           </section>
 
-				</section>
+        </section>
 
 <!-- Infos Schlag auf Schlag
 ============================ -->
 
         <section id="wo" class="step">
           <q>Wo?</q>
-          <p>Hinter den Hörsäälen</p>
-          <img class="foobar" data-src="images/fablab_door.png" alt="FabLab Türe" />
+          <p>Hinter den Hörsälen</p>
+          <img class="two_hor_img" data-src="img/fablab_door.jpg" alt="Hier könnte ein Bild von der FabLab Türe sein" />
+          <img class="two_hor_img" data-src="img/raumplan.svg" alt="Hier könnte ein Bild vom Weg zu FabLab sein" />
         </section>
 
         <section id="wann" class="step" data-notes="Important">
           <q>Wann?</q>
           <h2>OpenLabs</h2>
           <p>Bald wieder <b>regelmäßige Öffnungszeiten</b> mit Einweisungen </p><p class="fragment grow">und freundlichem Personal</p>
-          <p>TODO: sauers einweisungsbild?</p>
+          <p>TODO: Sauer's Einweisungsbild?</p>
         </section>
 
         <section id="warumich" class="step">
           <q>Warum ich?</p>
           <h2>Du solltest vorbei kommen, wenn...</h2>
           <ul>
-            <li class="fragment">Du mal schauen willst, was das FabLab jetzt eigentlich ist</li>
-            <li class="fragment">Du Ideen/Projekte hast, aber nicht das Werkzeug</li>
-            <li class="fragment">Du mitmachen willst</li>
-            <li class="fragment">Du gerade Langeweile zwischen den Vorlesungen hast <small>&mdash; oder dann besser nicht</small></li>
+            <li class="fragment">du mal schauen willst, was das FabLab jetzt eigentlich ist</li>
+            <li class="fragment">du Ideen/Projekte hast, aber nicht das Werkzeug</li>
+            <li class="fragment">du mitmachen willst</li>
+            <li class="fragment">du gerade Langeweile zwischen den Vorlesungen hast <small>&mdash; oder dann besser nicht</small></li>
           </ul>
           <aside class="notes" data-markdown="">
             Vorsicht, Fragmente!
@@ -225,110 +232,52 @@ Vertical slides -->
           </aside>
         </section>
 
-        <section id="links" class="step" data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-          <h2><a class="main_link" href="https://fablab.fau.de">https://fablab.fau.de</a></h2>
-          <img id="qrcode" class="qrcode" data-src="images/qrcode_website.png" alt="Hier könnte ihr QR-Code stehen">
+        <section id="links" class="step" data-transition="slide" data-background="#209466" data-background-transition="zoom">
+          <a class="main_link" href="https://fablab.fau.de">https://fablab.fau.de</a>
+          <img id="qrcode" class="qrcode" data-src="img/qrcode_website.svg" alt="Hier könnte ihr QR-Code stehen">
 
           <aside class="notes" data-markdown="">
-            Alle jetzt QR Code abscannen
-            ----------------------------
+            - Alle jetzt QR Code abscannen
+            - und App installieren
           </aside>
         </section>
 
+      </div>
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+    </div>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
+    <script>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+    showNotes: false, // show notes on the main presentation screen
 
-			</div>
+            transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
-		</div>
+    parallaxBackgroundImage: 'img/fablab_leuchtschild.jpg',
+    parallaxBackgroundHorizontal: 200,
+    parallaxBackgroundVertical: 150,
 
-		<script src="reveal.js/lib/js/head.min.js"></script>
-		<script src="reveal.js/js/reveal.js"></script>
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: 'reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
 
-		<script>
+    </script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-        showNotes: false, // show notes on the main presentation screen
-
-				transition: 'zoom', // none/fade/slide/convex/concave/zoom
-
-        parallaxBackgroundImage: 'img/4-3-chapter.png',
-        parallaxBackgroundHorizontal: 120,
-        parallaxBackgroundVertical: 25,
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-					{ src: 'reveal.js/plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
+  </body>
 </html>

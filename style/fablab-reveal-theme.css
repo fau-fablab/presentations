@@ -1,3 +1,46 @@
+/*****************************
+ * FAU FabLab Theme adjusments
+ * ---------------------------
+ * Author: Sebastian Endres
+ *****************************/
+
 .reveal section img.title_img {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+}
+
+.reveal section div.dark_background {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 20px;
+}
+
+.reveal section img.one_img {
+  max-width: 45%;
+}
+
+.reveal section img.two_hor_img {
+  max-width: 45%;
+}
+
+.reveal section .fixed_top {
+  display: block;
+  margin-top: -30px;
+  text-shadow:  0px 0px 5px #000000;
+}
+
+.reveal section a.main_link {
+  margin: 0 0 20px 0;
+  color: #78bae6;
+  font-family: 'League Gothic', Impact, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  text-decoration: underline;
+  word-wrap: break-word;
+  font-size: 2.11em;
+}
+.reveal section a.main_link:hover {
+  color: #eee8d5;
 }
