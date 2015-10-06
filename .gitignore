@@ -29,6 +29,9 @@
 *.synctex.gz
 *.pdf
 *.backup
+revision.tex
+*.snm
+*.nav
 
 #Include some images as pdfs
 !/img/logo/*.pdf
