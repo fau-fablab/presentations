@@ -36,3 +36,6 @@ revision.tex
 #Include some images as pdfs
 !/img/logo/*.pdf
 !/vektorzeichnen/*.pdf
+
+#Makefile
+output/

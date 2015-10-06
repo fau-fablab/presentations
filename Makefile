@@ -20,6 +20,7 @@
 ###
 
 TARGET=vektorzeichnen_mit_inkscape
+HTML5TARGETS=matherep-reveal.html
 
 PDFLATEX	?= pdflatex -halt-on-error -file-line-error
 BIBTEX		?= bibtex
@@ -93,7 +94,7 @@ else ifneq ($(wildcard .svn/entries),)
 endif
 
 # .PHONY names all targets that aren't filenames
-.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output
+.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output copy-html-libs
 
 all: pdf copy-output $(AFTERALL)
 
@@ -157,11 +158,21 @@ clean: clean-output
 		$(REVDEPS) $(AUXFILES) $(LOGFILES) \
 		$(EXTRACLEAN)
 
-copy-output: pdf
+copy-output: pdf copy-html-libs
 	mkdir -p output
 	cp $(PDFTARGETS) output/
+	cp $(HTML5TARGETS) output/
+
+copy-html-libs:
+	# reveal.js
+	mkdir -p output/reveal.js/
+	cp -ra reveal.js/css/ reveal.js/lib/ reveal.js/js/ reveal.js/LICENSE reveal.js/plugin/ output/reveal.js/
+	# impress.js
+	#mkdir -p output/impress.js/
+	#cp impress.js/css/ impress.js/js/ output/impress.js/ impress.js/README.md output/impress.js/
+	# own files
+	cp -ra img/ output/img/
+	cp -ra style/ output/style/
 
 clean-output:
-	mkdir -p output
-	find output/ -name "*.pdf" -delete
-	
+	rm -rf output/
