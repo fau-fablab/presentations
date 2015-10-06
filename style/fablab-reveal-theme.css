@@ -8,8 +8,8 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #163b64;
-  background-color: #163b64;
+  background: #00011a;
+  background-color:  #00011a;
 }
 
 .reveal {
@@ -62,7 +62,7 @@ body {
 
 .reveal section a.main_link {
   margin: 0 0 20px 0;
-  color: #C8E632;
+  color: #0072ff;
   font-family: 'League Gothic', Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
