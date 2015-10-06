@@ -29,3 +29,7 @@
 *.synctex.gz
 *.pdf
 *.backup
+
+#Include some images as pdfs
+!/img/logo/*.pdf
+!/vektorzeichnen/*.pdf
