@@ -62,7 +62,7 @@ body {
 
 .reveal section a.main_link {
   margin: 0 0 20px 0;
-  color: #78bae6;
+  color: #C8E632;
   font-family: 'League Gothic', Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -71,8 +71,24 @@ body {
   text-shadow: none;
   text-decoration: underline;
   word-wrap: break-word;
-  font-size: 2.11em;
+  font-size: 3.40em;
 }
 .reveal section a.main_link:hover {
   color: #eee8d5;
+}
+
+div.image_overlay {
+  margin: 0 auto;
+    position: relative;
+    border: none;
+    width: 13em;
+    height: 13em;
+}
+div.image_overlay img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: .25em;
 }
