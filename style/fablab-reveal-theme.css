@@ -4,6 +4,38 @@
  * Author: Sebastian Endres
  *****************************/
 
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #163b64;
+  background-color: #163b64;
+}
+
+.reveal {
+  color: #ffffff;
+}
+
+.reveal h1{
+  font-size: 3.5em;
+}
+
+/********************************************
+ * REVEAL ELEMENTS
+ ********************************************/
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/********************************************
+ * CUSTOM ELEMENTS
+ ********************************************/
 .reveal section img.title_img {
   background-color: #ffffff;
 }
