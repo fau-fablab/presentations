@@ -94,7 +94,7 @@ else ifneq ($(wildcard .svn/entries),)
 endif
 
 # .PHONY names all targets that aren't filenames
-.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output copy-html-libs
+.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output compile-html-assets clean-html-assets copy-html-assets
 
 all: pdf copy-output $(AFTERALL)
 
@@ -150,7 +150,7 @@ distill: $(PDFTARGETS:.pdf=.distilled.pdf)
 distclean: clean
 	$(RM) $(PDFTARGETS) $(PDFTARGETS:.pdf=.distilled.pdf) $(EXTRADISTCLEAN)
 
-clean: clean-output
+clean: clean-output clean-html-assets
 	$(RM) $(foreach T,$(TARGETS), \
 		$(T).out $(T).blg $(T).bbl \
 		$(T).lof $(T).lot $(T).toc $(T).idx \
@@ -158,12 +158,18 @@ clean: clean-output
 		$(REVDEPS) $(AUXFILES) $(LOGFILES) \
 		$(EXTRACLEAN)
 
-copy-output: pdf copy-html-libs
+copy-output: pdf copy-html-assets
 	mkdir -p output
 	cp $(PDFTARGETS) output/
 	cp $(HTML5TARGETS) output/
 
-copy-html-libs:
+compile-html-assets:
+	find -name "*.svg" -print0 | xargs -0 -I '{}' inkscape --export-png="{}.png" {}
+	$(foreach P,$(HTML5TARGETS), \
+		sed -i "s/.svg\"/.svg.png\"/g" $(P) \
+	)
+
+copy-html-assets:
 	# reveal.js
 	mkdir -p output/reveal.js/
 	cp -ra reveal.js/css/ reveal.js/lib/ reveal.js/js/ reveal.js/LICENSE reveal.js/plugin/ output/reveal.js/
@@ -173,6 +179,12 @@ copy-html-libs:
 	# own files
 	cp -ra img/ output/img/
 	cp -ra style/ output/style/
+
+clean-html-assets:
+	find -name "*.svg.png" -exec rm {} \;
+	$(foreach P,$(HTML5TARGETS), \
+		sed -i "s/.svg.png\"/.svg\"/g" $(P) \
+	)
 
 clean-output:
 	rm -rf output/

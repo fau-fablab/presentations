@@ -14,6 +14,14 @@ auschecken
 git clone --recursive git@github.com:fau-fablab/presentations.git
 ```
 
+Makefile
+--------
+
+Man kann die SVGs in PNGs umbauen (soll performanter sein, wird nicht automatisch gemacht): `make compile-html-assets` <-> `make clean-html-assets`
+
+buildserver
+-----------
+
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
 [![Build Status](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
