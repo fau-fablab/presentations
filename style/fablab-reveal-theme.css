@@ -30,7 +30,7 @@ body {
   margin: 20px auto;
   padding: 5px;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /********************************************
@@ -52,6 +52,15 @@ body {
 
 .reveal section img.two_hor_img {
   max-width: 45%;
+}
+
+.reveal section img.small_img {
+  width: 6em;
+  padding: .5em;
+  border: none;
+  margin-left: 0em;
+  margin-bottom: 0em;
+  display: block;
 }
 
 .reveal section .fixed_top {
