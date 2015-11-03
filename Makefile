@@ -19,7 +19,7 @@
 ###           # do something...
 ###
 
-TARGET=vektorzeichnen_mit_inkscape
+TARGET=vektorzeichnen_mit_inkscape kassenterminal
 HTML5TARGETS=matherep-reveal.html
 
 PDFLATEX	?= pdflatex -halt-on-error -file-line-error

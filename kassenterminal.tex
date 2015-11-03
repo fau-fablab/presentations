@@ -1,0 +1,162 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = de_DE
+\pdfminorversion=4
+
+%\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
+
+\documentclass[german]{beamer} % evtl. FabLab Anpassungen
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[babel,german=quotes]{csquotes} %\enquote{...} für deutsche Anführungszeichen um ein Wort
+\usepackage{color}
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
+\usepackage{hyperref}
+\usepackage{scrhack}
+\usepackage{multicol}
+
+\newcommand{\images}{kassenterminal/}
+\newcommand{\ccbysa}{\href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{\includegraphics[height=0.11in]{img/licenses/cc-by-sa.png}}}
+\newcommand{\artlibre}{\href{http://artlibre.org/licence/lal/de/}{\includegraphics[height=0.11in]{img/licenses/art_libre.png}}}
+
+\beamertemplatenavigationsymbolsempty
+
+\addtobeamertemplate{footline}{
+    \usebeamerfont{footline}
+    \usebeamercolor[fg]{footline}
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+    \hspace{1em}%
+    \insertsectionhead
+}{}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\title{Das Kassenterminal des FAU FabLab}
+\author{Patrick Kanzler}
+\logo{\includegraphics[width=0.3\linewidth]{img/logo/logo.pdf}}
+
+\begin{document}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\maketitle
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\frame{\tableofcontents}
+
+%-----------------------------------------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Unser Hintergrund}
+\begin{itemize}
+ \item FabLab als Teil eines Universitäts-Lehrstuhles
+ \item Buchhaltung über Lehrstuhl
+ \item Materialverkauf und Verkauf von Laserzeit im Lab
+ \item früher: offene \enquote{Vertrauenskasse}
+   \begin{itemize}
+   	\item unübersichtliche Preislisten
+   	\item Geldmengen wurden zu groß
+    \item hat zu Problemen beim Wechseln geführt
+   \end{itemize} 	
+\end{itemize}	 
+\end{frame}
+
+\begin{frame}
+\frametitle{Unsere Anforderungen}
+ \begin{itemize}
+ 	\item Bargeld, später Uni-interne Bezahlkarte
+ 	\item damals Import der Artikel aus Google-Tabelle, heute ERP
+	\item Nachvollziehbarkeit
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Unser Kassenterminal}
+\begin{columns}[c]
+\column{.4\linewidth}
+  \only<1>{\includegraphics[width=.9\linewidth]{\images/terminal_geschlossen.jpg}}
+  \only<2->{\includegraphics[width=.9\linewidth]{\images/terminal_offen.jpg}}
+\column{.59\linewidth}
+ \begin{itemize}
+ \uncover<1->\item soweit möglich Open-Source-Soft- und Hardware
+ \uncover<2->\item Holzkasten, mit Münzzähler, Scheinaufnahme, normaler PC, Touchscreen
+ \uncover<3->\item Software: FabLabKasse (\url{https://github.com/fau-fablab/FabLabKasse} )
+ \uncover<3->\item Software wird mit git versioniert
+ \end{itemize}
+ \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{FabLabKasse}
+ \begin{itemize}
+  \item geschrieben in Python, GPL
+  \item modular gestaltet:
+    \begin{itemize}
+     \item austauschbares \enquote{Backend} zum Anbinden von Artikeln
+     \item Schnittstelle zu Bezahlmöglichkeiten
+     \item wir versuchen den Code so allgemein wie möglich zu halten
+    \end{itemize}
+  \item unser Backend:
+    \begin{itemize}
+      \item kann Daten aus odoo (ERP) lesen
+      \item kann nicht ins ERP schreiben (also auch keine Aktualisierung des Bestandes)
+      \item Kassenbuch wird in kassenbuch.py geführt, rudimentäre doppelte Buchführung
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{FabLabKasse}
+  \begin{itemize}
+  \item unsere Barzahlung:
+     \begin{itemize}
+        \item bindet MDB-Münzaufnahme an (Industriestandard)
+        \item bindet Geldscheinleser an
+        \item günstige Geräte haben oftmals Bugs in Firmware
+        \item[$\rightarrow$] \enquote{paranoider} Code, um Fehler zu erkennen
+     \end{itemize}
+  \item Zusatzfeature:
+     \begin{itemize}
+       \item User können mit unserer App Warenkörbe zusammen stellen
+       \item dieser Warenkorb kann an das Kassenterminal übertragen werden
+     \end{itemize} 
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Was ist noch bei uns zu tun?}
+ \begin{itemize}
+   \item richtige Anbindung ERP (Bestand, Verkäufe ins ERP, ...)
+   \item Verallgemeinerung des Kassenbuch und zugehörigem Backend
+   \item Anbindung der Uni-internen Bezahlkarten
+   \item viele kleine Umbauten, um den Code allgemeingültiger zu machen
+ \end{itemize} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Was ist zu tun, um den Code bei dir einzusetzen?}
+  \begin{itemize}
+    \item Dies ist keine Plug-and-Play-Lösung! Vielmehr auf uns zugeschnitten
+    \item Möglicher Pfad:
+      \begin{itemize}
+         \item Hardware zusammensuchen (wobei auch eine offene Kasse ohne \enquote{Automatisierung} möglich wäre)
+         \item Treiber ergänzen (falls nötig)
+         \item Backend schreiben
+         \item bei bestehendem ERP o.\,ä. daran anpassen
+         \item oder z.\,B. unser Kassenbuch anpassen
+      \end{itemize}
+    \item wir würden mit Rat zur Seite stehen, haben aber nicht die Kapazität, diese Anpassungen selbst durchzuführen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kontakt}
+ \begin{itemize}
+  \item \url{kontakt@fablab.fau.de}
+  \item oder z.\,B. Issue auf github ( \url{https://github.com/fau-fablab/FabLabKasse} )
+  \item oder \url{patrick.kanzler@fablab.fau.de} (ich stelle gerne den weiteren Kontakt her)
+ \end{itemize}
+\end{frame}
+
+
+\end{document}
