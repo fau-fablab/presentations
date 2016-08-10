@@ -80,7 +80,7 @@ body {
   text-shadow: none;
   text-decoration: underline;
   word-wrap: break-word;
-  font-size: 3.40em;
+  font-size: 3em;
 }
 .reveal section a.main_link:hover {
   color: #eee8d5;
@@ -100,4 +100,14 @@ div.image_overlay img {
     width: 100%;
     height: 100%;
     padding: .25em;
+}
+
+.reveal section span.icon img {
+    border: none;
+    background: transparent;
+    margin: 0;
+    margin-left: .5em;
+    margin-right: .5em;
+    padding: 0;
+    max-height: 2em;
 }
