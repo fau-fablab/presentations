@@ -1,0 +1,87 @@
+%-------------------------------------------------------------------------------
+% Inner theme file
+%-------------------------------------------------------------------------------
+
+\mode<presentation>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titelseite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{title page}
+{%
+\setlength{\unitlength}{1mm}
+\begin{picture}(254,190.5)(17.4,0) % Ursprung (0,0) minus linke Marginalie
+  % Hintergrundbild
+  \put(0,0){%
+    \pgfuseimage{titelbild}
+  }
+  \put(17.4,92){%
+    \begin{minipage}[c][65mm][t]{226mm}
+	\vspace{\fill}
+	\begin{center}
+		\usebeamerfont{title}{\inserttitle}
+		\vspace{7mm}
+		% Achtung, hier kein \newline oder \\ verwenden, nur \par
+		% Ansonsten zerschießt irgendwas das centering
+		\ifx\insertauthor\empty\else
+			\par \fontsize{16}{22}\selectfont\insertauthor
+		\fi
+		\ifx\insertdate\empty\else
+			\par \fontsize{16}{22}\selectfont \insertdate
+		\fi
+	\end{center}
+	\vspace{\fill}
+    \end{minipage}
+  }
+\end{picture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titelseite Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section-Seite %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginSection{%
+  \frame[plain,c]{%
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(254,190.5)(17.4,0) % Ursprung (0,0) minus linke Marginalie
+      % Hintergrundbild Kapitel
+      \put(0,116){%
+        \pgfuseimage{kapitelbild}
+      }
+      % Trennbalken
+      %\put(0,135.1){\color{fablabblue}\rule{\paperwidth}{4mm}}
+      % Titel der Section
+      \put(17.4,75.3){%
+        \begin{minipage}[b][25mm][t]{226mm}
+          {%
+            \setbeamertemplate{section in toc}{\fontsize{26}{54}\selectfont\color{fablabblue}\bfseries\insertsection}
+            \tableofcontents[sectionstyle=show/hide, subsectionstyle=show/show/hide]
+          }
+        \end{minipage}
+      }
+     % Logo-Box mit FAU-Logo
+       \put(153.45,0){%
+         \begin{minipage}[b][37.5mm][c]{89.95mm}
+           \raggedleft % Ausrichtung am rechten Rand
+           \pgfuseimage{fablablogo}
+         \end{minipage}
+     }
+    \end{picture}
+  }% end frame
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Section-Seite Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%% Aufzaehlungen und Listen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enumerate item
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+
+% Itemize item
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textbullet}
+\setbeamertemplate{itemize subsubitem}{\textbullet}
+%%%%%%%%%%%%%%%%%%%%%% Aufzaehlungen und Listen Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode
+<all>

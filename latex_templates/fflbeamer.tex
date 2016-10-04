@@ -1,0 +1,62 @@
+\documentclass[t]{beamer}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[ngerman]{babel}
+%\usepackage[babel,german=quotes]{csquotes}
+\usepackage{graphicx}
+
+\usepackage{import}
+\newcommand{\themepath}{./theme/}
+\subimport{\themepath}{beamerthemefablab-4-3.sty}
+
+\usepackage[font=large,labelfont=bf]{caption}
+
+\begin{document}
+% Title page
+%\title[My Short Title]{My Title}
+%\author{My Author}
+\date{29.03.2012}
+\institute{FAU FabLab}
+
+\frame[plain,c]{\titlepage} % plain-Option deaktiviert Kopf- und Fusszeile
+
+\frame{\frametitle{Table of Contents}\tableofcontents}
+
+\begin{frame}
+	\frametitle{Publications}
+	\begin{itemize}
+		\item Not yet
+	\end{itemize}
+\end{frame}
+
+\section{First Section}
+\subsection{First Subsection}
+
+\begin{frame}
+	\frametitle{Target}
+	
+	This is some content
+	\begin{itemize}
+		\item An item
+		\item Another item
+	\end{itemize}
+ 	
+ 	~\\
+	
+	And some more content
+\end{frame}
+
+\subsection{Second Subsection}
+
+\begin{frame}[plain]
+	\begin{center}
+		%\color{white}
+		%\footnotesize
+		~\\~\\~\\~\\~\\~\\~\\~\\~\\
+		END
+	\end{center}
+\end{frame}
+
+\end{document}

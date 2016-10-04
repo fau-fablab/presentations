@@ -1,0 +1,80 @@
+%-------------------------------------------------------------------------------
+% Outer theme file
+%-------------------------------------------------------------------------------
+
+\mode<presentation>
+
+
+% Seitenanpassung
+\usepackage{geometry}
+\geometry{paperwidth=254mm,paperheight=190.5mm,left=0mm,right=0mm,top=0mm,bottom=0mm} % Papiergroesse
+\setbeamersize{text margin left=17.4mm,text margin right=10.6mm} % Marginalien fuer Inhalt
+
+% Deaktivierung der Navigationssymbole
+\setbeamertemplate{navigation symbols}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Folientitel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{frametitle}
+{%
+  \insertframetitle\\%[24pt]
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Folientitel Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopfzeile %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}
+{%
+  \setlength{\unitlength}{1mm}
+  \begin{picture}(254,29.8)(0,0)
+    % Trennbalken
+    \put(17.4,5.8){\color{fablabblue}\rule{226mm}{0.75pt}}
+    
+    \put(17.4,12.8){\color{fablabblue}\huge{\insertsection \ifx\insertsubsection\empty \else\hspace{5pt} |\hspace{5pt} \insertsubsection\fi}}
+    
+    % Logo-Box mit FAU-Logo
+    \put(178.5,4.1){%
+      \begin{minipage}[b][24mm][c]{49.69mm}
+        \pgfuseimage{fablablogo}
+      \end{minipage}
+    }
+  \end{picture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopfzeile Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fusszeile %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}
+{%
+  \setlength{\unitlength}{1mm}
+  \begin{picture}(254,12.5)(0,0)
+    % Box fuer Info
+    \put(17.4,0){%
+      \begin{minipage}[b][12.5mm][c]{169.5mm}
+		\ifx\insertdate\empty\else        
+          \insertdate\quad|\quad
+		\fi
+% BUG: if-empty Überprüfung von insertauthor funktioniert nicht (zumindest bei max, debian squeeze). Deshalb erstmal auskommentiert.
+% 		\ifx\insertauthor\empty\else        
+%           \insertauthor\quad|\quad
+% 		\fi
+		\ifx\insertinstitute\empty\else
+		  \insertinstitute\quad|\quad
+		\fi
+        \insertshorttitle
+      \end{minipage}
+    }
+    % Box fuer Seitenzahl
+    \put(230.9,0){%
+      \begin{minipage}[b][12.5mm][c]{12.5mm}
+        \raggedleft % Ausrichtung am rechten Rand
+        \insertpagenumber % Seitenzahl
+      \end{minipage}
+    }
+  \end{picture}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fusszeile Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode
+<all>

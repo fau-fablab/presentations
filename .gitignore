@@ -32,6 +32,8 @@
 revision.tex
 *.snm
 *.nav
+*.fdb_latexmk
+*.fls
 
 #Include some images as pdfs
 !/img/logo/*.pdf
