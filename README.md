@@ -24,8 +24,8 @@ buildserver
 
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
-[![Build Status](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
+[![Build Status](https://user.fablab.fau.de/~buildserver/presentations/status.svg)](https://user.fablab.fau.de/~buildserver/presentations/)
+[![TODOs](https://user.fablab.fau.de/~buildserver/presentations/status-todos.svg)](https://user.fablab.fau.de/~buildserver/presentations/)
 
 Lizenz
 ------
