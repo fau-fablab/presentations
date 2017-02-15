@@ -10,7 +10,7 @@ Die neuesten Versionen aus [github](https://github.com/fau-fablab/presentations)
 auschecken
 ----------
 
-```bash
+```shell
 git clone --recursive git@github.com:fau-fablab/presentations.git
 ```
 

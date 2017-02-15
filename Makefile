@@ -20,7 +20,7 @@
 ###
 
 TARGET=vektorzeichnen_mit_inkscape kassenterminal
-HTML5TARGETS=matherep-reveal.html
+HTML5TARGETS=matherep-reveal.html fab12.html
 
 PDFLATEX	?= pdflatex -halt-on-error -file-line-error
 BIBTEX		?= bibtex
@@ -173,11 +173,9 @@ copy-html-assets:
 	# reveal.js
 	mkdir -p output/reveal.js/
 	cp -ra reveal.js/css/ reveal.js/lib/ reveal.js/js/ reveal.js/LICENSE reveal.js/plugin/ output/reveal.js/
-	# impress.js
-	#mkdir -p output/impress.js/
-	#cp impress.js/css/ impress.js/js/ output/impress.js/ impress.js/README.md output/impress.js/
 	# own files
 	cp -ra img/ output/img/
+	cp -ra fab12-img/ output/fab12-img/
 	cp -ra style/ output/style/
 
 clean-html-assets:
