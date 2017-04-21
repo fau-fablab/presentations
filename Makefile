@@ -94,11 +94,17 @@ else ifneq ($(wildcard .svn/entries),)
 endif
 
 # .PHONY names all targets that aren't filenames
-.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output compile-html-assets clean-html-assets copy-html-assets
+.PHONY: all clean pdf view snapshot distill distclean clean-output copy-output compile-html-assets clean-html-assets copy-html-assets subfolders
 
-all: pdf copy-output $(AFTERALL)
+all: pdf copy-output subfolders $(AFTERALL)
 
 pdf: $(PDFTARGETS)
+
+subfolders:
+	$(MAKE) -C physik_projektpraktikum
+	$(MAKE) -C mechsys_praktikum
+	cp physik_projektpraktikum/physik_projektpraktikum.pdf output/
+	cp mechsys_praktikum/mechsys_praktikum.pdf output/
 
 view: $(PDFTARGETS)
 	$(PDFVIEWER) $(PDFTARGETS)
@@ -149,6 +155,8 @@ distill: $(PDFTARGETS:.pdf=.distilled.pdf)
 
 distclean: clean
 	$(RM) $(PDFTARGETS) $(PDFTARGETS:.pdf=.distilled.pdf) $(EXTRADISTCLEAN)
+	$(MAKE) distclean -C physik_projektpraktikum
+	$(MAKE) distclean -C mechsys_praktikum
 
 clean: clean-output clean-html-assets
 	$(RM) $(foreach T,$(TARGETS), \
@@ -157,6 +165,8 @@ clean: clean-output clean-html-assets
 		$(T).nav $(T).snm) \
 		$(REVDEPS) $(AUXFILES) $(LOGFILES) \
 		$(EXTRACLEAN)
+	$(MAKE) clean -C physik_projektpraktikum
+	$(MAKE) clean -C mechsys_praktikum
 
 copy-output: pdf copy-html-assets
 	mkdir -p output
@@ -179,7 +189,7 @@ copy-html-assets:
 	cp -ra style/ output/style/
 
 clean-html-assets:
-	find -name "*.svg.png" -exec rm {} \;
+	find -name "*.svg.png" -delete
 	$(foreach P,$(HTML5TARGETS), \
 		sed -i "s/.svg.png\"/.svg\"/g" $(P) \
 	)
