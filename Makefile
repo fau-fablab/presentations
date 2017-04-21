@@ -187,6 +187,8 @@ copy-html-assets:
 	cp -ra img/ output/img/
 	cp -ra fab12-img/ output/fab12-img/
 	cp -ra style/ output/style/
+	# WORKAROUND during license cleanup
+	rm output/img/fraese-lego.png
 
 clean-html-assets:
 	find -name "*.svg.png" -delete

@@ -14,7 +14,7 @@
    width="1062.8"
    version="1.2"
    id="svg2"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="4-3-chapter.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -25,16 +25,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="483"
+     inkscape:window-width="1920"
+     inkscape:window-height="1117"
      id="namedview45"
      showgrid="false"
-     inkscape:zoom="0.50809181"
-     inkscape:cx="531.40002"
-     inkscape:cy="157.08"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:zoom="2.0323672"
+     inkscape:cx="339.71555"
+     inkscape:cy="176.2572"
+     inkscape:window-x="-4"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <defs
      id="defs4">
@@ -131,30 +131,41 @@
        id="path37" />
   </g>
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./zahnraeder2b.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./zahnraeder2b.png"
      xlink:href="./zahnraeder2b.png"
-     id="image39"
-     x="341.78"
-     y="163.43"
-     height="149.99"
+     width="257.23"
      transform="matrix(0.98963801,-0.14358486,0.14358486,0.98963801,0,0)"
-     width="257.23" />
+     height="149.99"
+     y="163.43"
+     x="341.78"
+     id="image39" />
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./3d-turm.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./3d-turm.png"
      xlink:href="./3d-turm.png"
-     id="image41"
-     x="-262.05"
-     y="82.566"
-     height="168.15"
+     width="137.65"
      transform="scale(-1,1)"
-     width="137.65" />
+     height="168.15"
+     y="82.566"
+     x="-262.05"
+     id="image41" />
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./platine.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./platine.png"
      xlink:href="./platine.png"
-     id="image43"
-     x="722.1"
-     y="-466.53"
-     height="158.53"
+     width="122.67"
      transform="matrix(0.81536807,0.57894293,-0.57894293,0.81536807,0,0)"
-     width="122.67" />
+     height="158.53"
+     y="-466.53"
+     x="722.1"
+     id="image43" />
+  <text
+     xml:space="preserve"
+     style="font-size:8.26334381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#e6e6e6;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+     x="8.2144976"
+     y="294.79004"
+     id="text3070"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3072"
+       x="8.2144976"
+       y="294.79004">Bilder: jabella flickr.com CC-BY 2.0, FAU FabLab, dschanoeh flickr.com CC-BY-SA-NC 2.0</tspan></text>
 </svg>

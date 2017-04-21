@@ -14,8 +14,11 @@
    width="1062.8"
    version="1.1"
    id="svg2"
-   inkscape:version="0.47 r22583"
-   sodipodi:docname="4-3-title.svg">
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="4-3-title.svg"
+   inkscape:export-filename="/home/max/fablab/git/presentations/img/4-3-title.png"
+   inkscape:export-xdpi="254.05"
+   inkscape:export-ydpi="254.05">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -25,17 +28,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="983"
+     inkscape:window-width="1920"
+     inkscape:window-height="1117"
      id="namedview179"
      showgrid="false"
-     inkscape:zoom="0.83267078"
-     inkscape:cx="850.72467"
-     inkscape:cy="356.00876"
+     inkscape:zoom="1.1775743"
+     inkscape:cx="612.0003"
+     inkscape:cy="283.25289"
      inkscape:window-x="-4"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <defs
      id="defs4">
     <inkscape:perspective
@@ -444,32 +449,32 @@
        x="538.31378"
        y="225.78452">Lasercutter - 3D-Drucker - Elektrowerkstatt</tspan></text>
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./zahnraeder2b.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./zahnraeder2b.png"
      xlink:href="./zahnraeder2b.png"
-     width="313.76001"
-     transform="matrix(0.96909141,-0.24670194,0.24670194,0.96909141,0,0)"
-     height="182.95"
-     y="684.42981"
+     id="image173"
      x="159.54634"
-     id="image173" />
+     y="684.42981"
+     height="182.95"
+     transform="matrix(0.96909141,-0.24670194,0.24670194,0.96909141,0,0)"
+     width="313.76001" />
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./3d-turm.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./3d-turm.png"
      xlink:href="./3d-turm.png"
-     transform="matrix(-0.98562768,-0.16893217,-0.16893217,0.98562768,0,0)"
-     height="223.38"
-     width="182.86"
-     y="542.35803"
+     id="image175"
      x="-283.25162"
-     id="image175" />
+     y="542.35803"
+     width="182.86"
+     height="223.38"
+     transform="matrix(-0.98562768,-0.16893217,-0.16893217,0.98562768,0,0)" />
   <image
-     sodipodi:absref="/home/max/svn/fablab/vorlagen/Folien/theme/art/./platine.png"
+     sodipodi:absref="/home/max/fablab/git/presentations/img/./platine.png"
      xlink:href="./platine.png"
-     transform="matrix(0.99550395,0.09472003,-0.09472003,0.99550395,0,0)"
-     height="200.78999"
-     width="155.37"
-     y="461.01324"
+     id="image177"
      x="909.12769"
-     id="image177" />
+     y="461.01324"
+     width="155.37"
+     height="200.78999"
+     transform="matrix(0.99550395,0.09472003,-0.09472003,0.99550395,0,0)" />
   <g
      inkscape:groupmode="layer"
      id="layer1"
@@ -492,4 +497,15 @@
        d="m -43.857343,488.65207 1150.514743,0"
        style="opacity:1;fill:none;stroke:#929292;stroke-width:13;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.29803922999999999;stroke-dasharray:none" />
   </g>
+  <text
+     xml:space="preserve"
+     style="font-size:8.26334381px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+     x="8.5180368"
+     y="789.44562"
+     id="text3070"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3072"
+       x="8.5180368"
+       y="789.44562">Bilder: jabella flickr.com CC-BY 2.0, FAU FabLab, dschanoeh flickr.com CC-BY-SA-NC 2.0</tspan></text>
 </svg>

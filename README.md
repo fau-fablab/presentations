@@ -30,6 +30,4 @@ Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 Lizenz
 ------
 
-Sie sind - wenn nicht anders vermerkt - verfügbar unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 International Lizenz</a>.
-
-[![Lizenz: 3.0](https://licensebuttons.net/l/by-sa/3.0/de/88x31.png)](https://creativecommons.org/licenses/by-sa/3.0/)
+Die einzelnen Bildlizenzen sind unter img/ in den jeweiligen .copyright.txt Dateien zu finden. Der Text der Präsentationen und FAU-FabLab-eigene Bilder sind unter CC-BY-SA 3.0 veröffentlicht. Das Resultat kann einzelne Bilder enthalten (z.B. das FAU-Logo), die nicht unter dieser Lizenz stehen, und steht deshalb nicht vollständig unter CC-Lizenz!
