@@ -20,7 +20,8 @@
 ###
 
 TARGET=vektorzeichnen_mit_inkscape kassenterminal
-HTML5TARGETS=matherep-reveal.html fab12.html
+HTML5TARGETS=matherep-reveal.html
+#fab12.html
 
 PDFLATEX	?= pdflatex -halt-on-error -file-line-error
 BIBTEX		?= bibtex
@@ -185,10 +186,10 @@ copy-html-assets:
 	cp -ra reveal.js/css/ reveal.js/lib/ reveal.js/js/ reveal.js/LICENSE reveal.js/plugin/ output/reveal.js/
 	# own files
 	cp -ra img/ output/img/
-	cp -ra fab12-img/ output/fab12-img/
+	# cp -ra fab12-img/ output/fab12-img/
 	cp -ra style/ output/style/
 	# WORKAROUND during license cleanup
-	rm output/img/fraese-lego.png
+	rm -f output/img/fraese-lego.png output/img/img/fraese-lego.png
 
 clean-html-assets:
 	find -name "*.svg.png" -delete
