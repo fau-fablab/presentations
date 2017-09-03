@@ -19,7 +19,7 @@
 ###           # do something...
 ###
 
-TARGET=vektorzeichnen_mit_inkscape kassenterminal
+TARGET=vektorzeichnen_mit_inkscape kassenterminal kurzvorstellung_fuer_workshops
 HTML5TARGETS=matherep-reveal.html
 #fab12.html
 
