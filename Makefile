@@ -175,7 +175,8 @@ copy-output: pdf copy-html-assets
 	cp $(HTML5TARGETS) output/
 
 compile-html-assets:
-	find -name "*.svg" -print0 | xargs -0 -I '{}' inkscape --export-png="{}.png" {}
+	# Use this target if you prefer png over svg files (performance/compatibility in browsers)
+	find -name "*.svg" -print0 | xargs -0 -I '{}' rsvg-convert -f png {} -o "{}.png"
 	$(foreach P,$(HTML5TARGETS), \
 		sed -i "s/.svg\"/.svg.png\"/g" $(P) \
 	)
