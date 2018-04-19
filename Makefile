@@ -104,8 +104,10 @@ pdf: $(PDFTARGETS)
 subfolders:
 	$(MAKE) -C physik_projektpraktikum
 	$(MAKE) -C mechsys_praktikum
+	$(MAKE) -C innovationslabor
 	cp physik_projektpraktikum/physik_projektpraktikum.pdf output/
 	cp mechsys_praktikum/mechsys_praktikum.pdf output/
+	cp innovationslabor/innovationslabor.pdf output/
 
 view: $(PDFTARGETS)
 	$(PDFVIEWER) $(PDFTARGETS)

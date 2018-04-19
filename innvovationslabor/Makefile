@@ -1,5 +1,5 @@
-TEX = mechsys_praktikum.tex
-PDF = mechsys_praktikum.pdf
+TEX = innovationslabor.tex
+PDF = innovationslabor.pdf
 
 $(PDF): $(TEX)
 	pdflatex $<
