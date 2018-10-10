@@ -16,6 +16,10 @@ body {
   color: #ffffff;
 }
 
+.reveal section img {
+  border: none;
+}
+
 /********************************************
  * REVEAL ELEMENTS
  ********************************************/
@@ -33,7 +37,8 @@ body {
  * CUSTOM ELEMENTS
  ********************************************/
 .reveal section img.title_img {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 
 .reveal section div.dark_background {
@@ -69,14 +74,13 @@ body {
 
 .reveal section a.main_link {
   margin: 0 0 20px 0;
-  color: #0072ff;
+  color: #FFFFFF;
   font-family: 'League Gothic', Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: uppercase;
   text-shadow: none;
-  text-decoration: underline;
   word-wrap: break-word;
   font-size: 3em;
 }
