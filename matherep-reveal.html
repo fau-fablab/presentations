@@ -199,7 +199,7 @@ Vertical slides -->
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
             </style>
-            <video src="./fab12-img/fraesse.webm" class="one_img" autoplay="autoplay" loop="loop"></video>
+            <video src="./fab12-img/fraesse.webm" class="one_img" autoplay controls loop="loop" onshow="">
 
             <aside class="notes" data-markdown="">
               CNC Fräse - CNC Drehbank
@@ -236,7 +236,10 @@ Vertical slides -->
           </section>
 
           <section id="tools:andere_tools">
-            <h2>...und jede Menge Anderes</h2>
+
+            <div class="dark_background">
+            <h2>...und Vieles mehr</h2>
+            </div>
 
             <aside class="notes" data-markdown="">
               - Druckluft
@@ -346,7 +349,7 @@ Vertical slides -->
     //parallaxBackgroundImage: 'img/fablab_leuchtschild.jpg',
     parallaxBackgroundImage: 'img/fablab_lasered.jpg',
     parallaxBackgroundSize: '200x100px',
-    parallaxBackgroundHorizontal: 300,
+    parallaxBackgroundHorizontal: 150,
     parallaxBackgroundVertical: 200,
 
             // Optional reveal.js plugins
