@@ -41,4 +41,3 @@ revision.tex
 
 #Makefile
 output/
-*.svg.png
