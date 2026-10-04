@@ -1,0 +1,12 @@
+# Dependabot prüft wöchentlich, ob logo neue Commits hat (z.B. ein
+# geändertes Logo), und öffnet dann automatisch einen Pull Request.
+version: 2
+updates:
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
+    # Branch-Namen mit Bindestrich (dependabot-submodules-...), damit sie nicht
+    # mit einem Branch "dependabot" kollidieren (Buildserver: git fetch)
+    pull-request-branch-name:
+      separator: "-"
