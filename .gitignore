@@ -36,9 +36,7 @@ revision.tex
 *.fls
 
 #Include some images as pdfs
-!/img/logo/*.pdf
 !/vektorzeichnen/*.pdf
 
 #Makefile
 output/
-*.svg.png

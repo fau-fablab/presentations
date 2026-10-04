@@ -1,46 +1,37 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = de_DE
-\pdfminorversion=4
+\documentclass[t]{beamer}
 
-%\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
-
-\documentclass[german]{beamer} % evtl. FabLab Anpassungen
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage[babel,german=quotes]{csquotes} %\enquote{...} für deutsche Anführungszeichen um ein Wort
+\usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
-\usepackage{hyperref}
-\usepackage{scrhack}
 \usepackage{multicol}
+\usepackage{import}
+\newcommand{\themepath}{latex_templates/theme/}
+\subimport{\themepath}{beamerthemefablab-4-3.sty}
+
+\usepackage[font=large,labelfont=bf]{caption}
 
 \newcommand{\images}{kassenterminal/}
 \newcommand{\ccbysa}{\href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{\includegraphics[height=0.11in]{img/licenses/cc-by-sa.png}}}
 \newcommand{\artlibre}{\href{http://artlibre.org/licence/lal/de/}{\includegraphics[height=0.11in]{img/licenses/art_libre.png}}}
-
-\beamertemplatenavigationsymbolsempty
-
-\addtobeamertemplate{footline}{
-    \usebeamerfont{footline}
-    \usebeamercolor[fg]{footline}
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
-    \hspace{1em}%
-    \insertsectionhead
-}{}
 
 %-----------------------------------------------------------------------------------------------------------------
 
 \title{Das Kassenterminal des FAU FabLab}
 \author{Max Gaukler}
 \date{5.\,November 2015}
-\logo{\includegraphics[width=0.3\linewidth]{img/logo/logo.pdf}}
+\institute{FAU FabLab}
 
 \begin{document}
 
 %-----------------------------------------------------------------------------------------------------------------
 
-\maketitle
+\frame[plain,c]{\titlepage} % plain-Option deaktiviert Kopf- und Fusszeile
 
 %-----------------------------------------------------------------------------------------------------------------
 
