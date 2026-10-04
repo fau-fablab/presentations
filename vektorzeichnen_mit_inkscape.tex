@@ -1,44 +1,35 @@
 % !TeX encoding = UTF-8
 % !TeX spellcheck = de_DE
-\pdfminorversion=4
+\documentclass[t]{beamer}
 
-%\newcommand{\todo}[1]{\textbf{\color{red}{TODO: #1}}}
-
-\documentclass[german]{beamer} % evtl. FabLab Anpassungen
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
+\usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}
-\usepackage{hyperref}
-\usepackage{scrhack}
 \usepackage{multicol}
+\usepackage{import}
+\newcommand{\themepath}{latex_templates/theme/}
+\subimport{\themepath}{beamerthemefablab-4-3.sty}
+
+\usepackage[font=large,labelfont=bf]{caption}
 
 \newcommand{\images}{vektorzeichnen/}
-\newcommand{\ccbysa}{\href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{\includegraphics[height=0.11in]{img/licenses/cc-by-sa.png}}}
-\newcommand{\artlibre}{\href{http://artlibre.org/licence/lal/de/}{\includegraphics[height=0.11in]{img/licenses/art_libre.png}}}
-
-\beamertemplatenavigationsymbolsempty
-
-\addtobeamertemplate{footline}{
-    \usebeamerfont{footline}
-    \usebeamercolor[fg]{footline}
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
-    \hspace{1em}%
-    \insertsectionhead
-}{}
+\newcommand{\ccbysa}{\href{https://creativecommons.org/licenses/by-sa/3.0/deed.de}{\includegraphics[height=0.22in]{img/licenses/cc-by-sa.png}}}
+\newcommand{\artlibre}{\href{http://artlibre.org/licence/lal/de/}{\includegraphics[height=0.22in]{img/licenses/art_libre.png}}}
 
 %-----------------------------------------------------------------------------------------------------------------
 
 \title{Vektorzeichnen mit Inkscape}
 \author{Sebastian Endres}
-\logo{\includegraphics[width=0.3\linewidth]{img/logo/logo.pdf}}
+\institute{FAU FabLab}
 
 \begin{document}
 
 %-----------------------------------------------------------------------------------------------------------------
 
-\maketitle
+\frame[plain,c]{\titlepage} % plain-Option deaktiviert Kopf- und Fusszeile
 
 %-----------------------------------------------------------------------------------------------------------------
 
@@ -153,7 +144,7 @@
 
   \begin{figure}
   	\centering
-    \includegraphics[width=\textwidth]{\images/scr_shot/start.png}
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\images/scr_shot/start.png}
     %\caption{Start}
     \label{fig:inkscape_scr_shot_start}
   \end{figure}
@@ -169,7 +160,7 @@
 
   \begin{figure}
   	\centering
-    \includegraphics[width=\textwidth]{\images/scr_shot/draw_object.png}
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\images/scr_shot/draw_object.png}
     %\caption{Object zeichnen}
     \label{fig:inkscape_scr_shot_draw_object}
   \end{figure}
@@ -184,7 +175,7 @@
 
   \begin{figure}
   	\centering
-    \includegraphics[width=0.7\textwidth]{\images/scr_shot/color.png}
+    \includegraphics[width=0.45\textwidth]{\images/scr_shot/color.png}
     \caption{Farbe setzen}
     \label{fig:inkscape_scr_shot_color}
   \end{figure}
@@ -240,7 +231,7 @@
   	\begin{column}{0.3\textwidth}
   		\begin{figure}
   		   \centering
-  			\includegraphics[width=\textwidth]{\images/scr_shot/path_options.png}
+  			\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{\images/scr_shot/path_options.png}
   			\label{fig:inkscape_scr_shot_path_options}
   		\end{figure}
   	\end{column}
@@ -328,14 +319,14 @@
   	\item \textbf{Inkscape Official Logo (Raster, 300x300px)}\\ von \textit{Inkscape User}: \href{https://inkscape.org/en/gallery/item/1088/}{\texttt{inkscape.org}} (Lizenz: \ccbysa) \par
   	        \begin{minipage}{\linewidth}
   	            \centering
-  	            \includegraphics[width=0.5in]{\images/inkscape_logo_300x300.png}
+  	            \includegraphics[width=0.8in]{\images/inkscape_logo_300x300.png}
   	        \end{minipage}
   			
 
   	\item \textbf{Heckert GNU white}\\ von \textit{Anomie}: \href{https://en.wikipedia.org/wiki/File:Heckert_GNU_white.svg}{\texttt{wikipedia.org}} (Lizenz: \artlibre) \par
   	        \begin{minipage}{\linewidth}
   	            \centering
-  	            \includegraphics[width=0.5in]{\images/gnu.png}
+  	            \includegraphics[width=0.8in]{\images/gnu.png}
   	        \end{minipage}
   			
   	\item \textbf{Eigene Bilder} (Lizenz: \ccbysa)
