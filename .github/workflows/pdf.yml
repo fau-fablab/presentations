@@ -1,0 +1,15 @@
+name: PDF bauen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    # Gemeinsamer Workflow aller FabLab-Dokumente: baut mit make die PDFs in
+    # output/ und legt bei Pushes auf den Hauptbranch ein Release mit den
+    # PDFs und output.tar.gz an
+    uses: fau-fablab/fablab-document/.github/workflows/pdf.yml@master
+    permissions:
+      contents: write
