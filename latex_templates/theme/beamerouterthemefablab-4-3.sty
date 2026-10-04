@@ -23,14 +23,24 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kopfzeile %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section | Subsection, bei zu langen Titeln verkleinert, damit sie nicht
+% ins Logo laufen
+\newsavebox{\fablabkopfbox}
 \setbeamertemplate{headline}
 {%
   \setlength{\unitlength}{1mm}
+  \sbox{\fablabkopfbox}{\color{fablabblue}\huge\insertsection \ifx\insertsubsection\empty \else\hspace{5pt} |\hspace{5pt} \insertsubsection\fi}%
   \begin{picture}(254,29.8)(0,0)
     % Trennbalken
     \put(17.4,5.8){\color{fablabblue}\rule{226mm}{0.75pt}}
     
-    \put(17.4,12.8){\color{fablabblue}\huge{\insertsection \ifx\insertsubsection\empty \else\hspace{5pt} |\hspace{5pt} \insertsubsection\fi}}
+    \put(17.4,12.8){%
+      \ifdim\wd\fablabkopfbox>155mm
+        \resizebox{155mm}{!}{\usebox{\fablabkopfbox}}%
+      \else
+        \usebox{\fablabkopfbox}%
+      \fi
+    }
     
     % Logo-Box mit FAU-Logo
     \put(178.5,4.1){%
