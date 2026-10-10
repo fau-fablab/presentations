@@ -1,0 +1,28 @@
+\abschnitt{Vision: FabCities}
+% Maßstäbe von zu Hause bis zum Planeten. Rechts zwei Balken: Material
+% bleibt in der Nähe (bis zur Stadt), Daten gehen um die Welt.
+\vspace{6mm}
+\begin{tikzpicture}[x=1mm,y=1mm]
+  \foreach \i/\r/\name/\weite in {0/2.5/Home/,1/4.5/Neighbourhood/1 km,
+      2/6.5/City/10 km,3/8.5/Region/{1,000 km},4/10.5/Planet/{10,000 km}}{
+    \draw[faublau,line width=1.25mm] (10.5,-\i*34) circle (\r);
+    \node[anchor=base west,inner sep=0,font=\beschriftungschrift\bfseries,
+      text=faublau] at (28,-\i*34-4) {\name};
+    \node[anchor=base west,inner sep=0,font=\beschriftungschrift,
+      text=fautech] at (28,-\i*34-17) {\weite};
+  }
+  % Material: lokal
+  \draw[faublau,line width=2.5mm,line cap=round] (185,4) -- (185,-72);
+  % Daten: global
+  \draw[fautech,line width=2.5mm,line cap=round] (208,4) -- (208,-140);
+  % Legende
+  \draw[faublau,line width=2.5mm,line cap=round] (4,-172) -- (17,-172);
+  \node[anchor=base west,inner sep=0,font=\beschriftungschrift]
+    at (28,-176) {materials stay local};
+  \draw[fautech,line width=2.5mm,line cap=round] (4,-190) -- (17,-190);
+  \node[anchor=base west,inner sep=0,font=\beschriftungschrift]
+    at (28,-194) {data travels globally};
+\end{tikzpicture}
+\par\vspace{12mm}
+Global exchange of data, with local harvesting and recycling of
+materials.

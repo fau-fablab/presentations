@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage{import}
+\newcommand{\posterpath}{../latex_templates/poster/}
+\subimport{\posterpath}{fablabposter.sty}
+
+\postertitel{Mitmachen}
+\posterfuss{\textbf{fablab.fau.de}\quad|\quad kontakt@fablab.fau.de}
+\bildnachweis{Foto: FAU FabLab, CC BY-SA 3.0}
+
+\begin{document}
+
+\foto[45]{220}{../img/einweisung.jpg}
+
+\spalten{%
+  \input{teile/mitmachen/betreuer_werden}
+  \blockabstand
+  \input{teile/mitmachen/ueber_uns_erzaehlen}
+}{%
+  \input{teile/mitmachen/maschinenbetreuung}
+  \blockabstand
+  \input{teile/mitmachen/organisation}
+  \blockabstand
+  \input{teile/gemeinsam/spenden}
+}
+
+\vfill
+\vspace{25.47mm}
+\qrfeld[92mm]{https://fablab.fau.de/mitmachen/}{Mitmachen}\hfill
+\input{teile/gemeinsam/qr_kanaele}
+
+\end{document}

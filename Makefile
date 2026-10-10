@@ -1,16 +1,19 @@
 # Baut alle Präsentationen als PDF nach output/: make
 #
 # Neue Präsentation: Name in TARGET (name.tex im Hauptordner) oder in
-# SUBDIRS (ordner/ordner.tex) eintragen.
+# SUBDIRS (ordner/ordner.tex) eintragen. Neues Poster: Name in POSTER
+# eintragen (poster/poster_name.tex).
 
 # Präsentationen im Hauptordner
 TARGET = kassenterminal kurzvorstellung_fuer_workshops vektorzeichnen_mit_inkscape
 # Präsentationen in eigenen Ordnern
 SUBDIRS = innovationslabor matherep mechsys_praktikum physik_projektpraktikum stuzuko
+# Poster (A0) im Ordner poster/, Teile unter poster/teile/
+POSTER = fablabs mitmachen vorstellung
 
 LATEXMK ?= latexmk -pdf -interaction=nonstopmode -halt-on-error
 
-PDFS = $(TARGET:=.pdf) $(foreach d,$(SUBDIRS),$(d)/$(d).pdf)
+PDFS = $(TARGET:=.pdf) $(foreach d,$(SUBDIRS),$(d)/$(d).pdf) $(POSTER:%=poster/poster_%.pdf)
 
 # Version, z.B. für die GitHub Action: make -s version
 # Standard: Datum des letzten Commits (JJJJ.MM.TT), bei nicht committeten
@@ -26,7 +29,7 @@ endif
 
 .PHONY: all pdf clean distclean version FORCE
 
-# output/ enthält genau die PDFs aus TARGET und SUBDIRS
+# output/ enthält genau die PDFs aus TARGET, SUBDIRS und POSTER
 all: pdf
 	mkdir -p output
 	find output/ -name "*.pdf" -delete

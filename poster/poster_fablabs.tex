@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage{import}
+\newcommand{\posterpath}{../latex_templates/poster/}
+\subimport{\posterpath}{fablabposter.sty}
+\usetikzlibrary{arrows.meta}
+
+\postertitel{Fabrication Laboratories}
+\posteruntertitel{Playground for Nerds or Lasting Impact?}
+\posterzusatz{DAAD Alumni-Sondertreffen, May 2019, Berlin\quad|\quad
+  Julian Hammer}
+\posterfuss{\textbf{fablab.fau.de}}
+\absender{Friedrich-Alexander-Universität}{Faculty of Engineering}
+\bildnachweis{Photos: David Panusch / FAU FabLab, CC BY-SA 3.0}
+
+\begin{document}
+
+\input{teile/fablabs/definition}
+\blockabstand
+\input{teile/fablabs/projekte}
+\blockabstand
+
+\dreispalten{%
+  \input{teile/fablabs/vision_digital_fabrication}
+}{%
+  \input{teile/fablabs/vision_fabcities}
+}{%
+  \input{teile/fablabs/controversies}
+  \blockabstand
+  \input{teile/fablabs/references}
+}
+
+\end{document}
