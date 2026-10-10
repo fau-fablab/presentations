@@ -1,0 +1,285 @@
+%-------------------------------------------------------------------------------
+% Poster-Master des FAU FabLab (A0 hoch) im Corporate Design der FAU
+%
+% Der Master enthält nur das Layout: Logozeile, Titel, Raster, Fuß und die
+% Bausteine (\abschnitt, \spalten, \foto, \bild, \qrfeld, ...). Die
+% Inhalte liegen nicht hier, sondern als einzelne Teile unter
+% poster/teile/<poster>/ und werden in poster/poster_<name>.tex mit \input
+% zusammengesetzt. Teile, die mehrere Poster nutzen, liegen unter
+% poster/teile/gemeinsam/.
+%
+% Einbinden:
+%   \newcommand{\posterpath}{../latex_templates/poster/}
+%   \subimport{\posterpath}{fablabposter.sty}
+%   \postertitel{...}          Pflicht
+%   \posteruntertitel{...}     optional, Zeile unter dem Titel
+%   \posterzusatz{...}         optional, z.B. Anlass und Autor:in
+%   \posterfuss{...}           Fuß links, Standard fablab.fau.de
+%   \bildnachweis{...}         Fuß links unten
+%   \absender{Uni}{Fakultät}   Fuß rechts, Standard deutsch
+%
+% Grundlage ist die FAU-Vorlage "Poster_A3_FAU_Tech_DE.potx" (A3 hoch, weiß,
+% FAU-Wortmarke oben links, Absender "Friedrich-Alexander-Universität /
+% Technische Fakultät") und die Regel des FAU-Designhandbuchs "2.1 Logo:
+% Anbindung von Partnerlogos an Wortmarke". Alle Maße der A3-Vorlage sind
+% mit 2*sqrt(2) auf A0 skaliert.
+%
+% Gestaltungsregeln:
+%
+% 1. Format und Raster
+%    A0 hoch (841 x 1189 mm). Grundmaß ist G = 25,47 mm, die Schutzzone
+%    der FAU-Wortmarke in der Größe der A3-Vorlage auf A0 hochgerechnet.
+%    Satzspiegel links bündig mit der Wortmarke (77 mm, gut 3G), rechts
+%    2G, Breite 713 mm. Zwei Spalten zu 343,8 mm (\spalten) oder drei
+%    Spalten zu 220,7 mm (\dreispalten), jeweils mit G Abstand. Fließtext
+%    steht in einer Spalte, Einleitungen dürfen über zwei von drei
+%    Spalten laufen (\zweidrittel). Nur Fotos, Bildreihen und QR-Leiste
+%    laufen über die volle Breite. Abstand zwischen Bildern einer Reihe X.
+% 2. Logozeile (FAU-Designhandbuch 2.1)
+%    FAU-Wortmarke (fau/fau-wortmarke.pdf, Original mit Schutzzone) links
+%    am Satzspiegel, Oberkante 50,8 mm vom Blattrand wie in der
+%    A3-Vorlage, halb so groß wie dort hochgerechnet: 131,7 mm breit,
+%    F-Höhe 48,4 mm. Schutzzone X = 12,74 mm (ein Viertel der Höhe, etwa
+%    fünf Strichstärken). Rechts davon nach X ein senkrechter Strich in
+%    FAU-Blau, halb so dick wie die Striche der Wortmarke (1,25 mm) und so
+%    hoch wie das F. Nach einem weiteren X das FabLab-Logo mit
+%    FAU-Schriftzug "FAU FABLAB" (logo/Logo/Logo-FAU-bunt.pdf), mittig zum
+%    F und so hoch wie das F.
+% 3. Flächen
+%    Die ganze Seite ist weiß wie in der FAU-Vorlage. Keine farbigen Kopf-
+%    oder Randflächen, keine Verläufe, kein Schmuck. Die einzigen Farbflächen
+%    sind die Logos und das Foto.
+% 4. Farben
+%    FAU-Blau (CMYK 100/70/0/45, aus der Wortmarke) für Titel, Überschriften,
+%    Nummern und Beschriftungen. Text schwarz. Die Farbe der Technischen
+%    Fakultät (#8C9FB1, aus der Absenderzeile) ist auf Weiß zu hell für
+%    Text und kommt nur bei Nebeninformationen vor: zweite Zeile des
+%    Absenders, Zusatzzeile unter dem Titel, Bildnachweis und als zweite
+%    Farbe in Diagrammen. Die FabLab-Farben kommen nur im
+%    FabLab-Logo vor.
+% 5. Schrift
+%    Helvetica (maßgleich zu Arial aus der FAU-Vorlage). Feste Stufen:
+%      Titel 150/170 pt fett, immer einzeilig (zu lange Titel werden
+%      automatisch auf Satzbreite verkleinert, keine Zeilenumbrüche) | Untertitel und Überschrift 64/76 pt
+%      (Überschrift fett) | Text 44/58 pt, Stichwort darin fett in
+%      FAU-Blau | Beschriftung, Zusatzzeile, Fuß und Absender 36/44 pt |
+%      Bildnachweis und Quellen 24/30 pt.
+%    Flattersatz mit Silbentrennung, kein Blocksatz. Überschriften werden
+%    nie getrennt.
+% 6. Fotos
+%    Entweder ein Foto über die volle Satzbreite unter dem Titel (\foto)
+%    oder eine Bildreihe aus gleich hohen Bildern (\bild) mit Beschriftung
+%    darunter. Bilder werden auf ihr Feld beschnitten, nie verzerrt.
+%    Menschen bei der Arbeit statt leerer Räume. Ohne Rahmen, Ecken und
+%    Filter. Bildnachweis im Fuß.
+%    Diagramme nur in FAU-Blau und Fakultätsfarbe, Linien 1,25 mm (halbe
+%    Strichstärke der Wortmarke), Beschriftung 36 pt.
+% 7. Fuß
+%    Über dem Fuß eine feine Linie (0,5 mm, FAU-Blau) über die
+%    Satzbreite. Links Webadresse und Bildnachweis, rechts die
+%    Absenderzeile der
+%    FAU-Vorlage ("Friedrich-Alexander-Universität" fett in FAU-Blau,
+%    darunter "Technische Fakultät" in der Fakultätsfarbe). Die
+%    Absenderzeile steht im Fuß, weil die Logozeile oben die ganze Breite
+%    braucht.
+% 8. QR-Codes
+%    Mindestens 8 mm Ruhezone, darunter eine Beschriftung, die das Ziel
+%    nennt. Keine Fremdlogos.
+%-------------------------------------------------------------------------------
+
+\makeatletter
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled]{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
+
+\usepackage[paperwidth=841mm,paperheight=1189mm,
+            left=77.03mm,right=50.94mm,top=142mm,bottom=128mm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage{qrcode}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Farben aus der FAU-Vorlage
+\definecolor{faublau}{cmyk}{1,0.7,0,0.45}
+\definecolor{fautech}{HTML}{8C9FB1}
+
+\newcommand{\ffl@wortmarke}{\posterpath fau/fau-wortmarke.pdf}
+\newcommand{\ffl@fablablogo}{\posterpath ../../logo/Logo/Logo-FAU-bunt.pdf}
+
+% Inhalt des Posters
+\newcommand{\postertitel}[1]{\def\ffl@titel{#1}}
+\newcommand{\posteruntertitel}[1]{\def\ffl@untertitel{#1}}
+\newcommand{\posterzusatz}[1]{\def\ffl@zusatz{#1}}
+\newcommand{\posterfuss}[1]{\def\ffl@fuss{#1}}
+\newcommand{\bildnachweis}[1]{\def\ffl@nachweis{#1}}
+\newcommand{\absender}[2]{\def\ffl@uni{#1}\def\ffl@fakultaet{#2}}
+\postertitel{}
+\newsavebox{\ffl@titelbox}
+\posteruntertitel{}
+\posterzusatz{}
+\posterfuss{fablab.fau.de}
+\bildnachweis{}
+\absender{Friedrich-Alexander-Universität}{Technische Fakultät}
+
+% Schriftstufen
+\newcommand{\titelschrift}{\fontsize{150}{170}\selectfont\bfseries}
+\newcommand{\untertitelschrift}{\fontsize{64}{76}\selectfont}
+\newcommand{\ueberschriftschrift}{\fontsize{64}{76}\selectfont\bfseries}
+\newcommand{\textschrift}{\fontsize{44}{58}\selectfont}
+\newcommand{\beschriftungschrift}{\fontsize{36}{44}\selectfont}
+\newcommand{\nachweisschrift}{\fontsize{24}{30}\selectfont}
+
+% Flattersatz mit genug Spielraum, damit bei großer Schrift keine Zeile
+% über den Rand läuft
+\setlength{\RaggedRightRightskip}{0pt plus 6em}
+\AtBeginDocument{%
+  \textschrift\RaggedRight
+  % Titel immer einzeilig, zu lange Titel auf Satzbreite verkleinert
+  \sbox{\ffl@titelbox}{\color{faublau}\titelschrift\ffl@titel}%
+  \ifdim\wd\ffl@titelbox>\linewidth
+    \resizebox{\linewidth}{!}{\usebox{\ffl@titelbox}}%
+  \else
+    \usebox{\ffl@titelbox}%
+  \fi
+  \par
+  \ifx\ffl@untertitel\@empty\else
+    \vspace{8mm}{\color{faublau}\untertitelschrift\ffl@untertitel\par}%
+  \fi
+  \ifx\ffl@zusatz\@empty\else
+    \vspace{8mm}{\color{fautech}\beschriftungschrift\ffl@zusatz\par}%
+  \fi
+  \vspace{25.47mm}%
+}
+
+% Aufzählungen: Nummern in FAU-Blau
+\setlist[enumerate]{label=\textcolor{faublau}{\bfseries\arabic*.},
+  leftmargin=*,labelsep=6mm,topsep=8mm,itemsep=6mm,parsep=0pt}
+% Aufzählungen ohne Nummer: Punkt in FAU-Blau
+\setlist[itemize]{label=\textcolor{faublau}{\textbullet},
+  leftmargin=*,labelsep=6mm,topsep=4mm,itemsep=2mm,parsep=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Logozeile und Fuß %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Maße in mm von unten links. Wortmarke ohne Schutzzone: links 77,03,
+% oben 1138,22, Breite 131,67, F-Höhe 48,42 (Grundlinie 1089,81),
+% rechts 208,70. X = 12,74.
+\AddToShipoutPictureBG{%
+  \put(0,0){%
+  \begin{tikzpicture}[x=1mm,y=1mm]
+    \useasboundingbox (0,0) rectangle (841,1189);
+    \fill[white] (0,0) rectangle (841,1189);
+    % FAU-Wortmarke, auf die Buchstaben zugeschnitten
+    \node[anchor=north west,inner sep=0] at (77.03,1138.22)
+      {\includegraphics[width=131.67mm,
+        viewport=48.708 41.562 552.352 233.856,clip]{\ffl@wortmarke}};
+    % Verbindungsstrich: X nach der Wortmarke, halbe Strichstärke
+    \fill[faublau] (221.43-0.63,1089.81) rectangle (221.43+0.63,1138.22);
+    % FabLab-Logo: 2X nach der Wortmarke, so hoch wie das F
+    \node[anchor=west,inner sep=0] at (234.17,1114.01)
+      {\includegraphics[height=49.45mm,
+        viewport=29.241 8.982 514.298 96.012,clip]{\ffl@fablablogo}};
+    % Feine Linie über dem Fuß
+    \draw[faublau,line width=0.5mm] (77.03,108) -- (790.06,108);
+    % Fuß auf zwei gemeinsamen Grundlinien: links Webadresse und
+    % Bildnachweis, rechts der Absender wie in der FAU-Vorlage
+    \node[anchor=base west,inner sep=0,text=faublau]
+      at (77.03,80) {\beschriftungschrift\ffl@fuss};
+    \node[anchor=base west,inner sep=0,text=fautech]
+      at (77.03,64.5) {\nachweisschrift\ffl@nachweis};
+    \node[anchor=base east,inner sep=0,text=faublau]
+      at (790.06,80) {\beschriftungschrift\bfseries\ffl@uni};
+    \node[anchor=base east,inner sep=0,text=fautech]
+      at (790.06,64.5) {\beschriftungschrift\ffl@fakultaet};
+  \end{tikzpicture}}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Logozeile und Fuß Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Elemente %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Foto über die volle Satzbreite: \foto[Verschiebung nach oben]{Höhe in mm}{Datei}
+% Das Foto wird auf Satzbreite skaliert und mittig beschnitten, die
+% Verschiebung (in mm) wählt einen höheren Bildausschnitt.
+\newcommand{\foto}[3][0]{%
+  \par\noindent
+  \begin{tikzpicture}
+    \clip (0,0) rectangle (\linewidth,#2mm);
+    \node[inner sep=0] at (0.5\linewidth,#2mm/2-#1mm)
+      {\includegraphics[width=\linewidth]{#3}};
+  \end{tikzpicture}\par
+  \vspace{25.47mm}%
+}
+
+% Bild mit Beschriftung für Bildreihen:
+% \bild[Verschiebung nach oben]{Breite}{Höhe}{Datei}{Beschriftung}
+% Das Bild füllt das Feld und wird mittig beschnitten.
+\newsavebox{\ffl@bildbox}
+\newcommand{\bild}[5][0mm]{%
+  \begin{minipage}[t]{#2}%
+    \sbox{\ffl@bildbox}{\includegraphics[width=#2]{#4}}%
+    \ifdim\ht\ffl@bildbox<#3\relax
+      \sbox{\ffl@bildbox}{\includegraphics[height=#3]{#4}}%
+    \fi
+    \begin{tikzpicture}
+      \clip (0,0) rectangle (#2,#3);
+      \node[inner sep=0] at (#2/2,#3/2-#1) {\usebox{\ffl@bildbox}};
+    \end{tikzpicture}%
+    \ifx\relax#5\relax\else
+      \par\vspace{4mm}%
+      {\color{faublau}\beschriftungschrift\bfseries\RaggedRight #5\par}%
+    \fi
+  \end{minipage}%
+}
+
+% Zwei Spalten nach dem Raster: \spalten{links}{rechts}
+\newcommand{\spalten}[2]{%
+  \par\noindent
+  \begin{minipage}[t]{343.78mm}\RaggedRight #1\end{minipage}%
+  \hspace{25.47mm}%
+  \begin{minipage}[t]{343.78mm}\RaggedRight #2\end{minipage}\par
+}
+
+% Drei Spalten nach dem Raster: \dreispalten{links}{mitte}{rechts}
+\newcommand{\dreispalten}[3]{%
+  \par\noindent
+  \begin{minipage}[t]{220.70mm}\RaggedRight #1\end{minipage}%
+  \hspace{25.47mm}%
+  \begin{minipage}[t]{220.70mm}\RaggedRight #2\end{minipage}%
+  \hspace{25.47mm}%
+  \begin{minipage}[t]{220.70mm}\RaggedRight #3\end{minipage}\par
+}
+
+% Text über zwei von drei Spalten, z.B. für Einleitungen: \zweidrittel{Text}
+\newcommand{\zweidrittel}[1]{%
+  \par\noindent
+  \begin{minipage}[t]{467.03mm}\RaggedRight #1\end{minipage}\par
+}
+
+% Abstand zwischen Blöcken: G
+\newcommand{\blockabstand}{\par\vspace{25.47mm}}
+
+% Stichwort im Text, z.B. als Zwischenüberschrift
+\newcommand{\stichwort}[1]{{\color{faublau}\bfseries #1}}
+
+% Überschrift eines Abschnitts
+\newcommand{\abschnitt}[1]{%
+  \par{\color{faublau}\ueberschriftschrift
+    \hyphenpenalty=10000\exhyphenpenalty=10000 #1\par}\vspace{6mm}%
+}
+
+% QR-Code mit Beschriftung: \qrfeld[Kantenlänge]{URL}{Beschriftung}
+\newcommand{\qrfeld}[3][120mm]{%
+  \begin{tabular}[t]{@{}c@{}}
+    \qrcode[height=#1]{#2}\\[10mm]
+    {\color{faublau}\beschriftungschrift\bfseries #3}
+  \end{tabular}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Elemente Ende %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatother

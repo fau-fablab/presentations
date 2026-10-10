@@ -1,3 +1,6 @@
+#macOS
+.DS_Store
+
 #KDE temp-files
 *~
 .directory
@@ -37,6 +40,8 @@ revision.tex
 
 #Include some images as pdfs
 !/vektorzeichnen/*.pdf
+!/img/*.pdf
+!/latex_templates/poster/fau/*.pdf
 
 #Makefile
 output/

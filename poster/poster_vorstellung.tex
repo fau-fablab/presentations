@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage{import}
+\newcommand{\posterpath}{../latex_templates/poster/}
+\subimport{\posterpath}{fablabposter.sty}
+
+\postertitel{Vorstellung des FAU FabLabs}
+\posterfuss{\textbf{fablab.fau.de}\quad|\quad kontakt@fablab.fau.de}
+\bildnachweis{Fotos: FAU FabLab; 3D-Drucker und Dübelfräse: David Panusch / FAU FabLab; alle CC BY-SA 3.0}
+
+\begin{document}
+
+\noindent
+\bild{350.15mm}{210mm}{../img/ewerkstatt.jpg}{}\hfill
+\bild{350.15mm}{210mm}{../img/hauptraum.jpg}{}
+\blockabstand
+
+\spalten{%
+  \input{teile/vorstellung/was_ist_ein_fablab}
+  \blockabstand
+  \input{teile/vorstellung/ausstattung}
+}{%
+  \input{teile/vorstellung/das_fau_fablab}
+  \blockabstand
+  \input{teile/vorstellung/kosten}
+}
+\blockabstand
+
+\vfill
+\input{teile/vorstellung/maschinen_bildreihe}
+
+\end{document}
