@@ -47,4 +47,4 @@ Untermodul [logo](https://github.com/fau-fablab/logo). Bei einem bestehenden Klo
 Lizenz
 ------
 
-Die einzelnen Bildlizenzen sind unter img/ in den jeweiligen .copyright.txt Dateien zu finden. Der Text der Präsentationen und FAU-FabLab-eigene Bilder sind unter CC-BY-SA 3.0 veröffentlicht. Das Resultat kann einzelne Bilder enthalten, die nicht unter dieser Lizenz stehen, und steht deshalb nicht vollständig unter CC-Lizenz!
+Die einzelnen Bildlizenzen sind unter img/ in den jeweiligen .copyright.txt Dateien zu finden. Der Text der Präsentationen ist unter CC BY-SA 4.0 veröffentlicht, FAU-FabLab-eigene Bilder unter CC BY-SA 3.0 oder 4.0 (siehe die jeweilige .copyright.txt). Das Resultat kann einzelne Bilder enthalten, die nicht unter dieser Lizenz stehen, und steht deshalb nicht vollständig unter CC-Lizenz!
